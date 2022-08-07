@@ -3,13 +3,25 @@ body {
 }
 
 .display {
+    background-color: #30333f;
+    color: #6b6e7c; 
     margin: 15px auto 15px;
-    width: 19rem;
+    width: 95vw;
+}
+
+.display > .summary {
+    height: 1rem;
+    text-align: right;
+}
+
+.diplay > .active {
+    height: 2rem;
+    text-align: right;
 }
 
 .keypad {
     margin: 15px auto 15px;
-    width: 19rem;
+    width: 95vw;
 }
 
 .row {
@@ -21,15 +33,13 @@ body {
 .row > button {
     background-color: #22222d;
     color: #acadc1;
-    width: 20%; 
+    height: 20vw;
+    width: 20vw; 
     display: flex;
     align-items: center;
     text-align: center;
     font: inherit;
     border-style: none;
-    margin: 5px;
-    height: 4rem;
-    width: 4rem;
     border-radius: 50%;
     display: flex;
     flex-direction: row;
