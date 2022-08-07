@@ -15,31 +15,26 @@ body {
     display: flex;
     align-items: center;
     text-align: center;
-}
-
-button {
-    background-color: inherit;
-    color: inherit;
     font: inherit;
     border-style: none;
     margin: 15px;
     padding: 15px;
     height: 2rem;
-    box-shadow: 5px 5px 5px #666666,
-        -5px -5px 5px #999999;
-    border-radius: 5px;
+    width: 2rem;
+    border-radius: 50%;
 }
 
-button:hover, button:focus {
-    box-shadow: 7px 7px 7px #666666,
-        -7px -7px 7px #999999;
-    outline: none;
-    background-color: #333333;
-    color: #cccccc;
+.row > button.operation {
+    background-color: #3f4757;
+    color: #9397aa;
 }
 
-button.sink {
-    box-shadow: inset 5px 5px 5px #666666,
-        inset -5px -5px 5px #999999;
-    border-radius: 10px;
+.row > button.equals {
+    background-color: #314380;
+    color: #4e6097;
+}
+
+.row > button.clear {
+    background-color: #633c5e;
+    color: #9f789c;
 }
