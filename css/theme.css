@@ -7,3 +7,27 @@
 .row > * {
     width: 20%;    
 }
+
+button {
+    background-color: inherit;
+    color: inherit;
+    font: inherit;
+    border-style: none;
+    box-shadow: 5px 5px 5px #666666,
+        -5px -5px 5px #999999;
+    border-radius: 10px;
+}
+
+button:hover, button:focus {
+    box-shadow: 7px 7px 7px #666666,
+        -7px -7px 7px #999999;
+    outline: none;
+    background-color: #333333;
+    color: #cccccc;
+}
+
+button.sink {
+    box-shadow: inset 5px 5px 5px #666666,
+        inset -5px -5px 5px #999999;
+    border-radius: 10px;
+}
