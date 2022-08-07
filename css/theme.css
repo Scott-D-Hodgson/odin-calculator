@@ -34,7 +34,10 @@ body {
     background-color: #22222d;
     color: #acadc1;
     height: 20vw;
-    width: 20vw; 
+    max-height: 4rem;
+    margin: 5px;
+    width: 20vw;
+    max-width: 4rem;
     display: flex;
     align-items: center;
     text-align: center;
