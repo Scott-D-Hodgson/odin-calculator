@@ -66,58 +66,58 @@ function AddDigit(char) {
     let button;
     button = document.getElementById("0");
     button.addEventListener("click", function () {
-        addDigit("0");
+        AddDigit("0");
     });
     button = document.getElementById("1");
     button.addEventListener("click", function () {
-        addDigit("1");
+        AddDigit("1");
     });
     button = document.getElementById("2");
     button.addEventListener("click", function () {
-        addDigit("2");
+        AddDigit("2");
     });
     button = document.getElementById("3");
     button.addEventListener("click", function () {
-        addDigit("3");
+        AddDigit("3");
     });
     button = document.getElementById("4");
     button.addEventListener("click", function () {
-        addDigit("4");
+        AddDigit("4");
     });
     button = document.getElementById("5");
     button.addEventListener("click", function () {
-        addDigit("5");
+        AddDigit("5");
     });
     button = document.getElementById("6");
     button.addEventListener("click", function () {
-        addDigit("6");
+        AddDigit("6");
     });
     button = document.getElementById("7");
     button.addEventListener("click", function () {
-        addDigit("7");
+        AddDigit("7");
     });
     button = document.getElementById("8");
     button.addEventListener("click", function () {
-        addDigit("8");
+        AddDigit("8");
     });
     button = document.getElementById("9");
     button.addEventListener("click", function () {
-        addDigit("9");
+        AddDigit("9");
     });
     button = document.getElementById("plus");
     button.addEventListener("click", function () {
-        addDigit("+");
+        AddDigit("+");
     });
     button = document.getElementById("minus");
     button.addEventListener("click", function () {
-        addDigit("-");
+        AddDigit("-");
     });
     button = document.getElementById("multiply");
     button.addEventListener("click", function () {
-        addDigit("*");
+        AddDigit("*");
     });
     button = document.getElementById("divide");
     button.addEventListener("click", function () {
-        addDigit("/");
+        AddDigit("/");
     });
 })();
