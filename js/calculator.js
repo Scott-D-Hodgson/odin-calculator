@@ -21,15 +21,19 @@ function AddDigit(char) {
                     switch (operation) {
                         case "+":
                             previous = previous + value;
+                            operation = char;
                             break;
                         case "-":
                             previous = previous - value;
+                            operation = char;
                             break;
                         case "*":
                             previous = previous * value;
+                            operation = char;
                             break;
                         case "/":
                             previous = previous / value;
+                            operation = char;
                             break;
                     };
                     history = previous.toString() + char;
