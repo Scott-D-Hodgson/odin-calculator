@@ -17,6 +17,7 @@ function AddDigit(char) {
                 let value = parseFloat(display);
                 if (!previous) {
                     previous = value;
+                    operation = char;
                 } else {
                     switch (operation) {
                         case "+":
@@ -36,11 +37,11 @@ function AddDigit(char) {
                             operation = char;
                             break;
                     };
-                    history = previous.toString() + char;
-                    let elm = document.getElementById("history");
-                    elm.innerText = history;
-                    display = "";
                 };
+                history = previous.toString() + char;
+                let elm = document.getElementById("history");
+                elm.innerText = history;
+                display = "";
             };
             break;
         case "0":
