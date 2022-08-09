@@ -8,7 +8,6 @@ function AddDigit(char) {
     if (typeof char !== "string" || char.length !== 1) {
         return;
     };
-    let previous = equation.slice(-1);
     switch (char) {
         case "+":
         case "-":
