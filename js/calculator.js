@@ -124,4 +124,37 @@ function AddDigit(char) {
     button.addEventListener("click", function () {
         AddDigit("/");
     });
+    document.addEventListener("keydown", function (event) {
+        if (event.isComposing || event.keyCode === 229) {
+            return;
+        };
+        if (event.keyCode >= 96 && event.keyCode <= 105) {
+            AddDigit((event.keyCode - 96).toString());
+            return;
+        };
+        if (event.keyCode >= 48 && event.keyCode <= 57) {
+            AddDigit((event.keyCode - 48).toString());
+            return;
+        };
+        if (event.keyCode === 106) {
+            AddDigit("*");
+            return;
+        };
+        if (event.keyCode === 107) {
+            AddDigit("+");
+            return;
+        };
+        if (event.keyCode === 109) {
+            AddDigit("-");
+            return;
+        };
+        if (event.keyCode === 110) {
+            AddDigit(".");
+            return;
+        };
+        if (event.keyCode === 111) {
+            AddDigit("/");
+            return;
+        };
+    });
 })();
