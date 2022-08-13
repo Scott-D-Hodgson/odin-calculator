@@ -136,15 +136,15 @@ function AddDigit(char) {
             AddDigit((event.keyCode - 48).toString());
             return;
         };
-        if (event.keyCode === 106) {
+        if (event.keyCode === 106 || (event.shiftKey && event.keyCode === 56)) {
             AddDigit("*");
             return;
         };
-        if (event.keyCode === 107) {
+        if (event.keyCode === 107 || (event.shiftKey && event.keyCode === 187)) {
             AddDigit("+");
             return;
         };
-        if (event.keyCode === 109) {
+        if (event.keyCode === 109 || event.keyCode === 189) {
             AddDigit("-");
             return;
         };
@@ -152,8 +152,20 @@ function AddDigit(char) {
             AddDigit(".");
             return;
         };
-        if (event.keyCode === 111) {
+        if (event.keyCode === 111 || event.keyCode === 191) {
             AddDigit("/");
+            return;
+        };
+        if (event.keyCode === 187) {
+            AddDigit("=");
+            return;
+        };
+        if (event.keyCode === 8) {
+            // Backspace
+            return;
+        };
+        if (event.keyCode === 27) {
+            // Escape
             return;
         };
     });
