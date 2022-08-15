@@ -4,6 +4,14 @@ let previous = null;
 let operation = "";
 let current = 0;
 
+function Clear() {
+    display = "";
+    history = "";
+    previous = null;
+    operation = "";
+    current = 0;
+}
+
 function RemoveDigit() {
     if (display === "") {
         return;
@@ -153,6 +161,10 @@ function UpdateHistory() {
     button = document.getElementById("equals");
     button.addEventListener("click", function () {
         Equals();
+    });
+    button = document.getElementById("clear");
+    button.addEventListener("click", function () {
+        Clear();
     });
     document.addEventListener("keydown", function (event) {
         if (event.isComposing || event.keyCode === 229) {
