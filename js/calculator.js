@@ -12,6 +12,37 @@ function RemoveDigit() {
     UpdateDisplay();
 }
 
+function Calculate() {
+    if (display === "") {
+        return;
+    };
+    let value = parseFloat(display);
+    if (!previous) {
+        previous = value;
+        operation = char;
+    } else {
+        switch (operation) {
+            case "+":
+                previous = previous + value;
+                operation = char;
+                break;
+            case "-":
+                previous = previous - value;
+                operation = char;
+                break;
+            case "*":
+                previous = previous * value;
+                operation = char;
+                break;
+            case "/":
+                previous = previous / value;
+                operation = char;
+                break;
+        };
+    };
+    history = previous.toString() + char;
+}
+
 function AddDigit(char) {
     if (typeof char !== "string" || char.length !== 1) {
         return;
@@ -21,36 +52,10 @@ function AddDigit(char) {
         case "-":
         case "*":
         case "/":
-            if (display !== "") {
-                let value = parseFloat(display);
-                if (!previous) {
-                    previous = value;
-                    operation = char;
-                } else {
-                    switch (operation) {
-                        case "+":
-                            previous = previous + value;
-                            operation = char;
-                            break;
-                        case "-":
-                            previous = previous - value;
-                            operation = char;
-                            break;
-                        case "*":
-                            previous = previous * value;
-                            operation = char;
-                            break;
-                        case "/":
-                            previous = previous / value;
-                            operation = char;
-                            break;
-                    };
-                };
-                history = previous.toString() + char;
-                let elm = document.getElementById("history");
-                elm.innerText = history;
-                display = "";
-            };
+            Calculate();
+            UpdateHistory();
+            display = "";
+            UpdateDisplay();
             break;
         case "0":
         case "1":
@@ -76,6 +81,11 @@ function AddDigit(char) {
 function UpdateDisplay() {
     let elm = document.getElementById("active");
     elm.innerText = display;
+}
+
+function UpdateHistory() {
+    let elm = document.getElementById("history");
+    elm.innerText = history;
 }
 
 (function () {
@@ -139,6 +149,10 @@ function UpdateDisplay() {
     button = document.getElementById("backspace");
     button.addEventListener("click", function () {
         RemoveDigit();
+    });
+    button = document.getElementById("equals");
+    button.addEventListener("click", function () {
+        Equals();
     });
     document.addEventListener("keydown", function (event) {
         if (event.isComposing || event.keyCode === 229) {
