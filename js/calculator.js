@@ -20,7 +20,7 @@ function RemoveDigit() {
     UpdateDisplay();
 }
 
-function Calculate() {
+function Calculate(char) {
     if (display === "") {
         return;
     };
