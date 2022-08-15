@@ -4,6 +4,14 @@ let previous = null;
 let operation = "";
 let current = 0;
 
+function RemoveDigit() {
+    if (display === "") {
+        return;
+    };
+    display = display.slice(0, -1);
+    UpdateDisplay();
+}
+
 function AddDigit(char) {
     if (typeof char !== "string" || char.length !== 1) {
         return;
@@ -62,6 +70,10 @@ function AddDigit(char) {
             display += char;
             break;
     };
+    UpdateDisplay();
+}
+
+function UpdateDisplay() {
     let elm = document.getElementById("active");
     elm.innerText = display;
 }
@@ -124,6 +136,10 @@ function AddDigit(char) {
     button.addEventListener("click", function () {
         AddDigit("/");
     });
+    button = document.getElementById("backspace");
+    button.addEventListener("click", function () {
+        RemoveDigit();
+    });
     document.addEventListener("keydown", function (event) {
         if (event.isComposing || event.keyCode === 229) {
             return;
@@ -157,15 +173,15 @@ function AddDigit(char) {
             return;
         };
         if (event.keyCode === 187) {
-            AddDigit("=");
+            Equals();
             return;
         };
         if (event.keyCode === 8) {
-            // Backspace
+            RemoveDigit();
             return;
         };
         if (event.keyCode === 27) {
-            // Escape
+            Clear();
             return;
         };
     });
